@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+```markdown
+# AI Project: Image, Recipe, and Chat Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a React-based application that leverages the OpenAI API to provide users with the ability to generate images, create recipes, and engage in chat. The application aims to demonstrate the capabilities of AI in creative and practical domains.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Image Generation**: Generate unique images based on user prompts using OpenAI's image generation capabilities.
+- **Recipe Creation**: Create personalized recipes based on user preferences and dietary restrictions.
+- **Chat Functionality**: Engage in interactive conversations with the AI, allowing users to ask questions and receive informative responses.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Integration](#api-integration)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: 
+  - React
+  - React Router
+  - Axios (for API requests)
 
-### `npm run build`
+- **Backend**: 
+  - Node.js (if applicable)
+  - Express (if applicable)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **AI Integration**: 
+  - OpenAI API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To set up this project locally, follow these steps:
 
-### `npm run eject`
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/MugoSimon/spring-ai.git
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Navigate to the project directory**:
+   ```bash
+   cd spring-ai
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Set up environment variables**:
+   Create a `.env` file in the root directory and add your OpenAI API key:
+   ```
+   REACT_APP_OPENAI_API_KEY=your_openai_api_key_here
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. **Start the application**:
+   ```bash
+   npm start
+   ```
 
-## Learn More
+6. **Open your browser**: Navigate to `http://localhost:3000` to view the application.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Image Generation
+- Navigate to the **Image Generation** section.
+- Enter a prompt describing the image you want to generate.
+- Click the **Generate Image** button to see the AI-generated image.
 
-### Code Splitting
+### Recipe Creation
+- Go to the **Recipe Creation** section.
+- Input your preferences (e.g., ingredients, dietary restrictions).
+- Press the **Create Recipe** button to receive a customized recipe.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Chat Functionality
+- Access the **Chat** section.
+- Type your question or prompt in the chat input.
+- Click **Send** to receive a response from the AI.
 
-### Analyzing the Bundle Size
+## API Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This project uses the OpenAI API for generating images, recipes, and chat responses. Ensure you have a valid API key and have set it up in your `.env` file.
 
-### Making a Progressive Web App
+### API Endpoints
+- **Image Generation**: 
+  - Endpoint: `http://localhost:8080/generate-image?prompt=`
+  - Method: `GET`
+  - Payload: `{ "prompt": "your_prompt_here", "n": 1, "size": "1024x1024" }`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Recipe Generation**: 
+  - Endpoint: `http://localhost:8080/generate-recipe?ingredients=`
+  - Method: `GET`
+  - Payload: `{ "ingredients": ["ingredient1", "ingredient2"], "diet": "vegan" }`
 
-### Advanced Configuration
+- **Chat**: 
+  - Endpoint: `http://localhost:8080/ask-ai?prompt=hello?`
+  - Method: `GET`
+  - Payload: `{ "prompt": [{"role": "user", "content": "your_message_here"}] }`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions are welcome! If you would like to contribute to this project, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes and commit them (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a pull request.
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, please reach out to:
+- **GitHub**: [MugoSimon](https://github.com/MugoSimon)
+
+---
