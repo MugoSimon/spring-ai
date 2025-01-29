@@ -1,18 +1,40 @@
-.App {
-  text-align: center;
+/* Apply a global box-sizing rule for consistency */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* Style the main application container */
+.App {
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Style the application logo */
 .App-logo {
   height: 40vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
   pointer-events: none;
 }
 
+/* Add animation to the logo if motion preference allows */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Style the header */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,17 +44,99 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Style links */
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
+.App-link:hover {
+  color: #21a1f1;
+}
+
+/* Define the logo spin animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Style buttons */
+button {
+  background-color: #61dafb;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #21a1f1;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #1b8cd8;
+  transform: translateY(0);
+}
+
+/* Style tabs container */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Style individual tab */
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.tab:hover {
+  color: #000;
+}
+
+.tab-active {
+  color: #000;
+  border-bottom: 2px solid #61dafb;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 2vmin);
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .tabs {
+    flex-direction: column;
+  }
+
+  .tab {
+    width: 100%;
+    text-align: center;
   }
 }
