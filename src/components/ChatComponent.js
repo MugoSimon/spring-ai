@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import '../App.css'; // Import the global CSS styles
+import "../App.css";
 
 function ChatComponent() {
-  const [prompt, setPrompt] = useState('');
-  const [chatResponse, setChatResponse] = useState('');
+  const [prompt, setPrompt] = useState("");
+  const [chatResponse, setChatResponse] = useState("");
 
   const askAi = async () => {
     try {
@@ -16,7 +16,7 @@ function ChatComponent() {
     } catch (error) {
       console.error("Error generating image: ", error);
     }
-  }
+  };
 
   return (
     <div className="chat-component-container">
@@ -31,10 +31,12 @@ function ChatComponent() {
         />
       </div>
       <div className="chat-button-container">
-        <button className="chat-button" onClick={askAi}>Ask AI</button>
+        <button className="chat-button" onClick={askAi}>
+          Ask AI
+        </button>
       </div>
       <div className="chat-output-container">
-        <p className="chat-response">{chatResponse}</p>
+        <pre className="chat-response">{chatResponse}</pre>
       </div>
     </div>
   );

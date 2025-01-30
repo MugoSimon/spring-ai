@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import "../App.css";
 
 function ImageGenerator() {
-  const [prompt, setPrompt] = useState(""); // State for the prompt
-  const [imageUrls, setImageUrls] = useState([]); // State for the generated image URLs
+  const [prompt, setPrompt] = useState(""); 
+  const [imageUrls, setImageUrls] = useState([]); 
 
   const generateImage = async () => {
     try {
@@ -33,19 +34,20 @@ function ImageGenerator() {
           className="prompt-input"
         />
       </div>
-
-      <button className="generate-button" onClick={generateImage}>
-        Generate Image
-      </button>
-
+      <div className="button-container">
+        <button className="generate-button" onClick={generateImage}>
+          Generate Image
+        </button>
+      </div>
       <div className="image-container">
         {imageUrls.map((url, index) => (
-          <img key={index} src={url} alt={`Generated Image ${index + 1}`} />
+          <div key={index} className="image-card">
+            <img src={url} alt={`Generated Image ${index + 1}`} />
+          </div>
         ))}
-
         {[...Array(3 - imageUrls.length)].map((_, index) => (
           <div key={index + imageUrls.length} className="empty-image-slot">
-            
+            <span>Waiting for image...</span>
           </div>
         ))}
       </div>
