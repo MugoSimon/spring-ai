@@ -27,7 +27,7 @@ function App() {
         className={`tab-button ${activetab === "chat" ? "active" : ""}`}
         onClick={() => handleTabChange("chat")}
       >
-        Chat
+        Ask ai
       </button>
 
       <button
@@ -39,9 +39,9 @@ function App() {
         Recipe Generator
       </button>
 
-      <div>{activetab === "image-generator" && <ImageGenerator/>}</div>
-      <div>{activetab === "chat" && <ChatComponent/>}</div>
-      <div>{activetab === "recipe-generator" && <RecipeGenerator/>}</div>
+      <div>{activetab === "image-generator" && <ImageGenerator />}</div>
+      <div>{activetab === "chat" && <ChatComponent />}</div>
+      <div>{activetab === "recipe-generator" && <RecipeGenerator />}</div>
     </div>
   );
 }
