@@ -1,4 +1,3 @@
-```markdown
 # AI Project: Image, Recipe, and Chat Generator
 
 ## Overview
