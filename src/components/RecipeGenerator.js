@@ -28,21 +28,21 @@ function RecipeGenerator() {
           className="recipe-input"
           type="text"
           value={ingredients}
-          placeholder="Enter ingredients (comma separated)"
+          placeholder="enter ingredients (comma separated)"
           onChange={(e) => setIngredients(e.target.value)}
         />
         <input
           className="recipe-input"
           type="text"
           value={cuisine}
-          placeholder="Enter cuisine type"
+          placeholder="enter cuisine type"
           onChange={(e) => setCuisine(e.target.value)}
         />
         <input
           className="recipe-input"
           type="text"
           value={dietaryRestrictions}
-          placeholder="Enter dietary restrictions"
+          placeholder="any dietary restrictions"
           onChange={(e) => setDietaryRestrictions(e.target.value)}
         />
       </div>
