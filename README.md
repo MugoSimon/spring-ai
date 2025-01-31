@@ -123,3 +123,8 @@ For questions or feedback, please reach out to:
 - **GitHub**: [MugoSimon](https://github.com/MugoSimon)
 
 ---
+## Screenshot
+
+<img src="src/images/Screenshot_image.png" alt="Image UI" width="600">
+<img src="src/images/Screenshot_chat.png" alt="Chat UI" width="600">
+<img src="src/images/Screenshot_recipe.png" alt="Recipe UI" width="600">
