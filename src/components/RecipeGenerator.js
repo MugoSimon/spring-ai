@@ -14,11 +14,11 @@ function RecipeGenerator() {
       );
       const data = await response.json();
       console.log("Generated recipe:", data);
-      setRecipe(data);
+      setRecipe(data.recipe); 
     } catch (error) {
-      console.error("Error generating image: ", error);
+      console.error("Error generating recipe: ", error);
     }
-  };
+  };   
 
   return (
     <div className="recipe-generator-container">
